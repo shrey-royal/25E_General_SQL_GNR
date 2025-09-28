@@ -101,3 +101,22 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+-------------------------------------------------------
+
+-- INOUT
+DELIMITER $$
+
+CREATE PROCEDURE SetCounter(
+    INOUT counter INT,
+    IN inc INT
+)
+BEGIN
+    SET counter = counter + inc;
+END $$
+
+DELIMITER ;
+
+-------------------------------------------------------
+-- to get all procedures
+SELECT ROUTINE_NAME, CREATED, LAST_ALTERED FROM information_schema.ROUTINES WHERE ROUTINE_TYPE='PROCEDURE' AND ROUTINE_SCHEMA='classicmodels';
