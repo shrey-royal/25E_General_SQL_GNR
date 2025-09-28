@@ -98,3 +98,33 @@ FROM
 WHERE
     routine_type = 'PROCEDURE'
         AND routine_schema = 'classicmodels';
+
+-------------------------------------------------------------
+-- Task
+
+/*
+6. Late Orders Report
+Write a stored procedure that returns all orders where the shippedDate is later than the requiredDate. The procedure should include the order number, customer name, order date, required date, shipped date, and how many days late it was.
+*/
+
+DELIMITER $$
+
+CREATE PROCEDURE GetLateOrders()
+BEGIN
+    SELECT
+        o.orderNumber,
+        c.customerName,
+        o.orderDate,
+        o.requiredDate,
+        o.shippedDate,
+        DATEDIFF(o.shippedDate, o.requiredDate) AS daysLate
+    FROM orders o
+    INNER JOIN customers c
+        ON o.customerNumber = c.customerNumber
+    WHERE o.shippedDate IS NOT NULL
+        AND o.shippedDate > o.requiredDate
+    ORDER BY daysLate DESC;
+
+END $$
+
+DELIMITER ;

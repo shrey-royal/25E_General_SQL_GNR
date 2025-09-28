@@ -1,0 +1,19 @@
+Tasks:
+
+1. Customer Order History
+   Write a stored procedure that takes a `customerNumber` as input and returns all their orders with order dates, status, and total order value.
+
+2. Top Selling Products
+   Create a stored procedure that retrieves the top N best-selling products (by quantity ordered) within a given date range.
+
+3. Employee Sales Performance
+   Develop a stored procedure that, for a given `employeeNumber`, shows total sales amount handled by that employee (through their customers), grouped by year.
+
+4. Stock Reorder Alert
+   Write a stored procedure that lists all products where `quantityInStock` falls below a given threshold (passed as input), along with supplier/vendor details.
+
+5. Customer Payment Report
+   Create a stored procedure that generates a report of all payments made by a specific customer, showing total amount paid and balance compared to their credit limit.
+
+6. Late Orders Report
+   Write a stored procedure that returns all orders where the shippedDate is later than the requiredDate. The procedure should include the order number, customer name, order date, required date, shipped date, and how many days late it was.
