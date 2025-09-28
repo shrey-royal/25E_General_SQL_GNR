@@ -17,3 +17,18 @@ Tasks:
 
 6. Late Orders Report
    Write a stored procedure that returns all orders where the shippedDate is later than the requiredDate. The procedure should include the order number, customer name, order date, required date, shipped date, and how many days late it was.
+
+7. Customer Outstanding Balance
+   Create a stored procedure that, given a customerNumber, calculates the customer’s outstanding balance by subtracting total payments from total order amounts.
+
+8. Monthly Sales Report
+   Write a stored procedure that takes a year and month as input and returns total sales for that period, grouped by product line.
+
+9. Employee Customer List
+   Develop a stored procedure that, given an employeeNumber, lists all the customers assigned to that employee (from salesRepEmployeeNumber), along with their credit limits.
+
+10. Product Profitability
+   Write a stored procedure that shows, for each product, the total revenue (quantityOrdered * priceEach), total cost (quantityOrdered * buyPrice), and profit (revenue – cost).
+
+11. Orders by Status
+   Create a stored procedure that takes a status (e.g., "Shipped", "Cancelled", "In Process") as input and returns all matching orders with their customer names and order dates.
