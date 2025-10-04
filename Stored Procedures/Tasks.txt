@@ -118,3 +118,42 @@ Set 2: (If else, Case statement)
 * If between 10,000–100,000 → `"Cheque Accepted"`
 * Else → `"Bank Transfer Required"`.
   Use IF/ELSEIF/ELSE.
+
+
+Set 3: (Loops)
+
+🔁 LOOP, LEAVE
+
+1. Print Numbers 1–N
+Write a procedure that takes `N` as input and uses a simple `LOOP` to print numbers from 1 to N (store them in a temporary table or use `SELECT`).
+
+2. Calculate Factorial
+Write a procedure that calculates factorial of a given number using a `LOOP` and exits with `LEAVE`.
+
+3. Sum of Even Numbers
+Create a procedure that sums even numbers from 1 to N using `LOOP` and `LEAVE`.
+
+4. Employee Email Collector
+Iterate over all employees using a cursor inside a `LOOP`, and build a comma-separated list of their emails.
+
+5. Increase Stock in Steps
+Write a procedure that increases `quantityInStock` for a given product by +5 units repeatedly until it reaches at least 100. Use `LOOP` and `LEAVE`.
+
+🔁 WHILE
+
+6. Countdown
+Create a procedure that takes a number as input and counts down to 1 using a `WHILE` loop.
+
+7. Customer Credit Increment
+Write a procedure that increases the `creditLimit` of a given customer by 500 repeatedly while it is less than 10,000.
+
+8. Search for Employee by Name
+Simulate searching employees in a loop: use `WHILE` with a cursor to iterate through employees until you find one with lastName = 'King', then exit.
+
+🔁 REPEAT
+
+9. Generate Payment Schedule
+Write a procedure that generates 12 monthly payment dates starting from today using a `REPEAT` loop, inserting into a temporary table.
+
+10. Multiplication Table Generator
+Create a procedure that, given a number, generates its multiplication table up to 10 using a `REPEAT` loop.
