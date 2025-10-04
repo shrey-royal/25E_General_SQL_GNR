@@ -1,4 +1,4 @@
-Tasks:
+Set 1:
 
 1. Customer Order History
    Write a stored procedure that takes a `customerNumber` as input and returns all their orders with order dates, status, and total order value.
@@ -32,3 +32,89 @@ Tasks:
 
 11. Orders by Status
    Create a stored procedure that takes a status (e.g., "Shipped", "Cancelled", "In Process") as input and returns all matching orders with their customer names and order dates.
+
+
+Set 2: (If else, Case statement)
+
+1. Customer Credit Check
+   Given a `customerNumber` and an `orderAmount`, write a procedure that checks if the customer has enough credit limit left.
+
+* Use IF/ELSE to print `"Approved"` or `"Declined"`.
+
+2. Employee Role Message
+   Given an `employeeNumber`, display a message based on jobTitle:
+
+* `"Executive Level"` if President or VP
+* `"Manager Level"` if jobTitle contains "Manager"
+* `"Staff Level"` otherwise.
+  Use a CASE statement.
+
+3. Order Status Handler
+   Given an `orderNumber`, return a custom message:
+
+* `"Order already shipped"` if status = "Shipped"
+* `"Order is in process"` if status = "In Process"
+* `"Order is cancelled"` if status = "Cancelled"
+* `"Other status"` otherwise.
+
+4. Payment Classification
+   Classify a payment amount as:
+
+* `"High"` if amount > 50,000
+* `"Medium"` if between 10,000 and 50,000
+* `"Low"` otherwise.
+  Use CASE.
+
+5. Product Stock Category
+   Given a `productCode`, classify stock levels:
+
+* `"Critical"` if quantityInStock < 100
+* `"Low"` if < 1000
+* `"Sufficient"` otherwise.
+  Use IF/ELSE.
+
+6. Regional Sales Office Grouping
+   Given an `officeCode`, return:
+
+* `"North America"` if territory = "NA"
+* `"Europe"` if territory = "EMEA"
+* `"Asia-Pacific"` if territory = "APAC" or "Japan"
+* `"Other"` otherwise.
+
+7. Customer Risk Rating
+   Rate a customer based on outstanding balance (total orders – payments):
+
+* `"High Risk"` if outstanding > 100,000
+* `"Medium Risk"` if between 50,000–100,000
+* `"Low Risk"` otherwise.
+  Use CASE.
+
+8. Employee Bonus Eligibility
+   Given an `employeeNumber`, check:
+
+* If they are Sales Rep and have customers → `"Eligible for Bonus"`
+* Otherwise → `"Not Eligible"`.
+  Use IF/ELSE.
+
+9. Order Delay Category
+   For each order, classify delay as:
+
+* `"On Time"` if shippedDate <= requiredDate
+* `"Slightly Late"` if <= 7 days late
+* `"Very Late"` if > 7 days late.
+  Use CASE with `DATEDIFF`.
+
+10. Product Price Band
+   Classify a product’s MSRP as:
+
+* `"Budget"` if < 50
+* `"Standard"` if between 50–150
+* `"Premium"` if > 150.
+
+11. Payment Method Based on Amount
+   Simulate decision-making:
+
+* If payment < 10,000 → `"Cash Preferred"`
+* If between 10,000–100,000 → `"Cheque Accepted"`
+* Else → `"Bank Transfer Required"`.
+  Use IF/ELSEIF/ELSE.
