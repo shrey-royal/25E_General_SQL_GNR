@@ -1,0 +1,61 @@
+1. Log Product Price Increases (Before Update)
+
+Create a trigger on the `products` table that logs every time the buy price increases. Insert the old buy price, new buy price, product code, and timestamp into a `BuyPriceLogs` table.
+
+---
+
+2. Prevent Negative Stock (Before Update)
+
+Write a BEFORE UPDATE trigger on `products` that prevents setting `quantityInStock` to a negative value. If attempted, use `SIGNAL SQLSTATE '45000'`.
+
+---
+
+3. Track Deleted Products (After Delete)
+
+Create a trigger that logs deleted products into a `DeletedProducts` table, storing productCode, productName, and the deletion timestamp.
+
+---
+
+4. Customer Credit Limit Changes Log (After Update)
+
+Write a trigger that records every modification of `creditLimit` for a customer into a `CreditLimitHistory` table, including old and new credit limits.
+
+---
+
+5. Validate Billing Amount Reduction (Before Update)
+
+Create a trigger on the `billings` table that prevents reducing the billing amount by more than 50%. If violated, raise a `SIGNAL`.
+
+(Uses similar logic to your `before_billing_update` trigger in Two.sql.)
+
+---
+
+6. Track Order Status Progression (After Update)
+
+Create an AFTER UPDATE trigger on `orders` that logs every time the `status` changes, storing oldStatus, newStatus, and timestamp in an `OrderStatusLogs` table.
+
+---
+
+7. Auto-Insert Missing Customer Code (Before Insert)
+
+Make a BEFORE INSERT trigger on `customers` that assigns a default `salesRepEmployeeNumber` if the inserted record has NULL in that field.
+
+---
+
+8. Cascade Update Logging (Follows Another Trigger)
+
+Write a second trigger on `products`, using FOLLOWS before_products_update, that logs which SQL user made any change to quantity or pricing into a `ProductAuditTrail` table.
+
+(This mirrors your pattern in Three.sql where triggers follow each other.)
+
+---
+
+9. Prevent Deleting High-Value Customers (Before Delete)
+
+Create a BEFORE DELETE trigger on `customers` that blocks deletion of customers whose `creditLimit` exceeds 100,000. Use SIGNAL with a custom error message.
+
+---
+
+10. Log Item Insertions (After Insert)
+
+For the `items` table (from One.sql), create an AFTER INSERT trigger that adds a row into `item_changes` with `change_type = 'INSERT'`.
